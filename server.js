@@ -3,6 +3,8 @@ import { read, write } from "./lib/files.js";
 import { resolve } from "path";
 import fileUpload from "express-fileupload";
 
+let PORT = process.env.PORT || 8000
+
 let imgType = [
   "image/jpeg",
   "image/jpg",
@@ -107,10 +109,10 @@ app.post("/news", (req, res) => {
 
     write(newsArray);
 
-    res.status(200).json({ status: 201, message: "news added" });
+    res.json(200,{ status: 201, message: "news added" });
   } catch (err) {
     res.json(400, { status: 400, message: err.message });
   }
 });
 
-app.listen(8000, () => console.log("listen to " + 8000));
+app.listen(PORT, () => console.log("listen to " + PORT));
