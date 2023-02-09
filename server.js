@@ -16,8 +16,10 @@ let imgType = [
 const app = Express();
 
 app.use(fileUpload());
-app.use("/public", Express.static(resolve("public")));
 app.use(Express.json());
+
+
+app.use("/public", Express.static(resolve("public")));
 
 app.get("/", (req, res) => {
   // index.html
