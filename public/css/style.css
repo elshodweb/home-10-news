@@ -1,0 +1,43 @@
+.wrapper {
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.search__input {
+  width: 400px;
+  padding: 5px;
+  font-size: 17px;
+}
+.search__btn {
+  padding: 5px 20px;
+  font-size: 17px;
+}
+.news {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 50px 20px 50px;
+}
+.card {
+  max-width: 350px;
+}
+.card__img {
+  width: 100%;
+}
+.card__img-div {
+  overflow: hidden;
+  width: 350px;
+  height: 200px;
+}
+.card__title {
+  -webkit-line-clamp: 2; /* Число отображаемых строк */
+  display: -webkit-box; /* Включаем флексбоксы */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  overflow: hidden; /* Обрезаем всё за пределами блока */
+}

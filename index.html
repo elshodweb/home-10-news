@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <a href="/admin">admin</a>
+    <div class="wrapper">
+      <header>
+        <form id="form" class="form" >
+          <input id="input" autocomplete="off" class="search__input" type="text">
+          <button  class="search__btn">serach</button>
+        </form>
+      </header>
+      <main>
+        <div class="news"></div>
+      </main>
+    </div>
+    <template id="card-template">
+      <a href="" class="card">
+        <div class="card__img-div">
+          <img class="card__img" src="" alt="news">
+        </div>
+        <div class="card__body">
+          <div class="card__title"></div>
+        </div>
+      </a>
+    </template>
+
+    <script src="./public/js/script.js"></script>
+  </body>
+</html>

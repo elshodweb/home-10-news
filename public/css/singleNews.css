@@ -1,0 +1,27 @@
+body{
+  padding: 10px;
+}
+.back{
+  background: #584747;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+
+}
+.news{
+  max-width: 600px;
+  margin: 0 auto;
+  
+}
+.news__img{
+  width: 100%;
+}
+.news__desc{
+  font-size: 20px;
+}
+.news__date{
+  font-size: 20px;
+  display: block;
+  text-align: right;
+}
