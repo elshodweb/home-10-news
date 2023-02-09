@@ -100,6 +100,7 @@ app.post("/news", (req, res) => {
 
     let imgUrl = "database/img/" + date.getTime() + name;
     mv(imgUrl);
+    console.log(newsArray)
     newsArray.push({
       title,
       body,
