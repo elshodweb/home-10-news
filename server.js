@@ -71,16 +71,12 @@ app.post("/news", (req, res) => {
   }
   try {
     let newsArray = read();
-    console.log(1, newsArray);
 
     let { title, body } = req.body;
     if (!req.files && !req.files?.image) {
       throw new Error("need to upload image");
     }
-    console.log(2,title);
-    console.log(3,body);
     let { image } = req.files;
-    console.log(4,image);
     let { name, mimetype, size, mv } = image;
 
     if (!imgType.includes(mimetype)) {
@@ -109,7 +105,7 @@ app.post("/news", (req, res) => {
       body,
       create_at,
       imgUrl,
-      newsId: newsArray?.at(-1)?.newsId + 1 || 1,
+      newsId: newsArray.at(-1)?.newsId + 1 || 1,
     });
 
     write(newsArray);
