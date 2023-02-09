@@ -3,7 +3,7 @@ import { read, write } from "./lib/files.js";
 import { resolve } from "path";
 import fileUpload from "express-fileupload";
 
-let PORT = process.env.PORT || 8000
+let PORT = process.env.PORT || 8000;
 
 let imgType = [
   "image/jpeg",
@@ -17,7 +17,6 @@ const app = Express();
 
 app.use(fileUpload());
 app.use(Express.json());
-
 
 app.use("/public", Express.static(resolve("public")));
 
@@ -72,12 +71,16 @@ app.post("/news", (req, res) => {
   }
   try {
     let newsArray = read();
+    console.log(1, newsArray);
+
     let { title, body } = req.body;
     if (!req.files && !req.files?.image) {
       throw new Error("need to upload image");
     }
-
+    console.log(2,title);
+    console.log(3,body);
     let { image } = req.files;
+    console.log(4,image);
     let { name, mimetype, size, mv } = image;
 
     if (!imgType.includes(mimetype)) {
@@ -110,10 +113,11 @@ app.post("/news", (req, res) => {
     });
 
     write(newsArray);
-
-    res.json(200,{ status: 201, message: "news added" });
+    console.log(newsArray);
+    res.sendStatus(200);
   } catch (err) {
-    res.json(400, { status: 400, message: err.message });
+    console.log(err);
+    res.sendStatus(400);
   }
 });
 

@@ -22,9 +22,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   formData.append("title", input.value);
   formData.append("body", textarea.value);
-  for (const key of formData) {
-    console.log(key);
-  }
+  
   submit(formData);
   input.value = "";
   textarea.value = "";
@@ -48,6 +46,5 @@ async function submit(formData) {
     })
     .catch(function (res) {
       notificate("Invalid POST", "red");
-      console.log(res, 111111);
     });
 }
