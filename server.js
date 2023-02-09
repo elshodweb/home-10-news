@@ -109,7 +109,6 @@ app.post("/news", (req, res) => {
     });
 
     write(newsArray);
-    console.log(newsArray);
     res.sendStatus(200);
   } catch (err) {
     console.log(err);

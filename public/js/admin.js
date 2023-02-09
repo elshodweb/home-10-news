@@ -22,7 +22,6 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   formData.append("title", input.value);
   formData.append("body", textarea.value);
-  
   submit(formData);
   input.value = "";
   textarea.value = "";
