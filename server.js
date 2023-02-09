@@ -106,7 +106,7 @@ app.post("/news", (req, res) => {
       body,
       create_at,
       imgUrl,
-      newsId: newsArray.at(-1)?.newsId + 1 || 1,
+      newsId: newsArray[newsArray.length - 1]?.newsId + 1 || 1,
     });
 
     write(newsArray);
